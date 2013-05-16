@@ -1,0 +1,40 @@
+[user]
+	name            = Andrew Hodgson
+	email           = ah9@me.com
+[core]
+  editor          = vim
+  autocrlf        = input
+  pager           = less
+	excludesfile    = /Users/andrewh/.gitignore_global
+[apply]
+  whitespace      = nowarn
+[alias]
+  co              = checkout
+  br              = branch
+  ci              = commit --verbose
+  st              = status -sb
+  last            = log -1 HEAD
+  l               = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  lol             = log --graph --pretty=oneline --abbrev-commit --decorate
+  unstage         = reset HEAD
+  staged          = diff --cached
+  unstaged        = diff
+  current-branch  = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+  track           = checkout -t # Usage: git track origin/feature-123-login-form
+[color]
+  diff            = auto
+  status          = auto
+  branch          = auto
+  ui              = true
+[github]
+  user            = andrewh
+[help]
+  autocorrect     = 1
+[status]
+  submodule       = 1
+[push]
+	default         = tracking
+[branch "master"]
+	rebase          = true
+[branch]
+	autosetuprebase = always
