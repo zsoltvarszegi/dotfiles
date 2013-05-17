@@ -5,7 +5,7 @@ filetype on
 filetype plugin indent on
 syntax on
 set tags=.tags,~/.tags,~/code/opensource/tags
-
+set paste
 " line numberings
 set number
 set t_Co=256
