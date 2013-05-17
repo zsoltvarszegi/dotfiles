@@ -1,23 +1,7 @@
-line() {
-  local ret=0
-  local line_number=$1
-  [[ $# -eq 2 ]] || ret=1 
-  [[ $ret -eq 0 ]] || printf "Try line 1 <file>, or sed-style line numbers, e.g. 1,10\n" 
-  [[ $ret -eq 0 ]] || return 1
-  sed -n "${line_number}p" $@ 2>/dev/null
-}
+# vim: filetype=sh
 
-ctags_ruby() {
-  ctags --append=yes --languages=ruby --recurse=yes --tag-relative=yes --verbose -f ~/.tags $@
-}
-
-function install_python_packages {
-  pip install {fabric,boto,texttable,awscli,MySQL-python,bpython,apache-libcloud,Sphinx,pep8,pylint,mechanize}
-}
-
-if [ -f ~/.git-completion.sh ]; then
-  . ~/.git-completion.sh
-fi
+[[ -f .bash_functions ]] && source .bash_functions
+[[ -f .git-completion.sh ]] && source .git-completion.sh
 
 shopt -s dotglob # ls dir/* includes dotfiles
 export HISTCONTROL="ignoredups"
