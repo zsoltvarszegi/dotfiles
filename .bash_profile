@@ -19,6 +19,7 @@ if [ -f ~/.git-completion.sh ]; then
   . ~/.git-completion.sh
 fi
 
+shopt -s dotglob # ls dir/* includes dotfiles
 export HISTCONTROL="ignoredups"
 export EDITOR="vim"
 export PAGER='less'
